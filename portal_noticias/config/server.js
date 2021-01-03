@@ -12,6 +12,7 @@ app.set('views', './app/views');
 // as urls codificadas. 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator());
+app.use(express.static('./app/public'))
 
 // Consign corre o diretório de rotas, arquivos específicos
 // e adiciona as rotas  em app
