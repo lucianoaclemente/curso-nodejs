@@ -10,6 +10,8 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
     * statics
 * multiroom_chat
     * socket.io
+* mmorpg_got
+    
 <br />
 
 Certificado: https://www.udemy.com/certificate/UC-3de4987c-d775-4c91-a158-fabf0c9cd8e0/
