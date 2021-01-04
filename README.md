@@ -11,6 +11,8 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
 * multiroom_chat
     * socket.io
 * mmorpg_got
+    * mongodb
+    * express-session
     
 <br />
 
