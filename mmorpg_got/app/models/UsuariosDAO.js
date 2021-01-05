@@ -1,8 +1,8 @@
-function usuariosDAO(connection) {   
+function UsuariosDAO(connection) {   
    this._connection = connection();
 }
 
-usuariosDAO.prototype.inserirUsuario = function(usuario) {
+UsuariosDAO.prototype.inserirUsuario = function(usuario) {
     this._connection.open( function(erro, mongoClient) {
         mongoClient.collection("usuarios", function(erro, collection) {
             collection.insert(usuario);
@@ -12,7 +12,7 @@ usuariosDAO.prototype.inserirUsuario = function(usuario) {
     }); 
 }
 
-usuariosDAO.prototype.autenticar = function(usuario, callback) {
+UsuariosDAO.prototype.autenticar = function(usuario, callback) {
     this._connection.open( function(erro, mongoClient) {
         mongoClient.collection("usuarios", function(erro, collection) {
             collection.find(usuario).toArray(function(erro, result) {
@@ -24,5 +24,5 @@ usuariosDAO.prototype.autenticar = function(usuario, callback) {
 }
 
 module.exports = function() {
-    return usuariosDAO;
+    return UsuariosDAO;
 }
