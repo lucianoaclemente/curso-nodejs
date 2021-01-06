@@ -14,6 +14,9 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
     * mongodb
     * express-session
     * crypto
+* apps
+    * Content Negotiation
+    * Status Code
     
 <br />
 
