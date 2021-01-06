@@ -13,6 +13,7 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
 * mmorpg_got
     * mongodb
     * express-session
+    * crypto
     
 <br />
 
