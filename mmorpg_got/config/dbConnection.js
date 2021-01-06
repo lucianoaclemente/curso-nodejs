@@ -1,12 +1,12 @@
 // importar o mongodb
-var mongo = require('mongodb');
+var mongodb = require('mongodb');
 
 var connMongoDB = function() {
 
-    var db = new mongo.Db(
+    var db = new mongodb.Db(
         'got',
-        new mongo.Server(
-            '192.168.85.136',
+        new mongodb.Server(
+            'localhost',
             27017,
             {}
         ),
