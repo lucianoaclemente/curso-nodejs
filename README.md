@@ -19,6 +19,8 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
     * Status Code
 * instagram_clone
     * API REST
+    * connect-multiparty
+    * fs
 
 <br />
 
