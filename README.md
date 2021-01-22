@@ -21,6 +21,8 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
     * API REST
     * connect-multiparty
     * fs
+* extra
+    * exemplo de api com Dynamodb local
 
 <br />
 
