@@ -45,13 +45,13 @@ UsuariosDAO.prototype.alterar = function(id, dados, callback) {
         Key: {     
             id: id
         },
-        UpdateExpression: 'SET email = :email', // String representation of the update to an attribute
-        ConditionExpression: 'attribute_exists(email)', // optional String describing the constraint to be placed on an attribute
-        ExpressionAttributeValues: { // a map of substitutions for all attribute values
+        UpdateExpression: 'SET email = :email', 
+        ConditionExpression: 'attribute_exists(email)', 
+        ExpressionAttributeValues: { 
             ':email': dados.email
         },
-        ConditionExpression: 'attribute_exists(email)', // optional String describing the constraint to be placed on an attribute
-        ReturnValues: 'NONE', // optional (NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW)
+        ConditionExpression: 'attribute_exists(email)', 
+        ReturnValues: 'NONE', 
     };
 
     this._docClient.update(params, callback);
