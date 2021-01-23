@@ -22,7 +22,7 @@ Código construído a partir do Curso Completo do Desenvolvedor NodeJS e MongoDB
     * connect-multiparty
     * fs
 * extras    
-    * api_dynamodb - exemplo de api com Dynamodb local
+    * api_dynamodb - exemplo de api com Dynamodb local utilizando aws-sdk
 
 <br />
 
