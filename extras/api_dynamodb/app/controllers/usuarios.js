@@ -1,59 +1,44 @@
-module.exports.listar = function(application, req, res) {
+module.exports.listar = function(application, callback) {
 
     var connection = application.config.dbConnection();
     var usuariosDAO = new application.app.models.UsuariosDAO(connection);
 
-    usuariosDAO.listar(req, function(err, data) {
-        if (err) res.json(err); 
-        else res.json(data) 
-    });
+    usuariosDAO.listar(callback);
+
+}
+
+module.exports.buscar = function(application, id, callback) {
+
+    var connection = application.config.dbConnection();
+    var usuariosDAO = new application.app.models.UsuariosDAO(connection);
+
+    usuariosDAO.buscarPorId(id, callback);
+
+}
+
+module.exports.incluir = function(application, dados, callback) {
+
+    var connection = application.config.dbConnection();
+    var usuariosDAO = new application.app.models.UsuariosDAO(connection);
+
+    usuariosDAO.incluir(dados, callback);
     
 }
 
-module.exports.incluir = function(application, req, res) {
+module.exports.alterar = function(application, id, dados, callback) {
 
     var connection = application.config.dbConnection();
     var usuariosDAO = new application.app.models.UsuariosDAO(connection);
 
-    usuariosDAO.incluir(req.body, function(err, data) {
-        if (err) res.json(err); 
-        else res.json(data) 
-    });
+    usuariosDAO.alterar(id, dados, callback);
     
 }
 
-module.exports.buscar = function(application, req, res) {
+module.exports.excluir = function(application, id, callback) {
 
     var connection = application.config.dbConnection();
     var usuariosDAO = new application.app.models.UsuariosDAO(connection);
 
-    usuariosDAO.buscarPorId(req.params.id, function(err, data) {
-        if (err) res.json(err); 
-        else res.json(data) 
-    });
-    
-}
-
-module.exports.alterar = function(application, req, res) {
-
-    var connection = application.config.dbConnection();
-    var usuariosDAO = new application.app.models.UsuariosDAO(connection);
-
-    usuariosDAO.alterar(req.params.id, req.body, function(err, data) {
-        if (err) res.json(err); 
-        else res.json(data) 
-    });
-    
-}
-
-module.exports.excluir = function(application, req, res) {
-
-    var connection = application.config.dbConnection();
-    var usuariosDAO = new application.app.models.UsuariosDAO(connection);
-
-    usuariosDAO.excluir(req.params.id, function(err, data) {
-        if (err) res.json(err); 
-        else res.json(data) 
-    });
+    usuariosDAO.excluir(req.params.id, callback);
     
 }

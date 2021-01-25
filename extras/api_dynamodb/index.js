@@ -21,30 +21,29 @@ dynamodb.deleteTable(params, function(err, data) {
     } else {
         console.log("Tabela excluida");
     }
+
+    var params = {
+        TableName : "Usuarios",
+        KeySchema: [
+            { AttributeName: "id", KeyType: "HASH"},  //Partition key
+        ],
+        AttributeDefinitions: [
+            { AttributeName: "id", AttributeType: "S" },
+        ],
+        ProvisionedThroughput: {
+            ReadCapacityUnits: 5,
+            WriteCapacityUnits: 5
+        }
+    };
+    
+    dynamodb.createTable(params, function(err, data) {
+        if (err) {
+            console.log("Erro na tentativa de criação da tabela");
+        } else {
+            console.log("Tabela criada com sucesso!");
+        }
+    });        
 });
-
-var params = {
-    TableName : "Usuarios",
-    KeySchema: [
-        { AttributeName: "id", KeyType: "HASH"},  //Partition key
-    ],
-    AttributeDefinitions: [
-        { AttributeName: "id", AttributeType: "S" },
-    ],
-    ProvisionedThroughput: {
-        ReadCapacityUnits: 5,
-        WriteCapacityUnits: 5
-    }
-};
-
-dynamodb.createTable(params, function(err, data) {
-    if (err) {
-        console.log("Erro na tentativa de criação da tabela");
-    } else {
-        console.log("Tabela criada com sucesso!");
-    }
-});    
-
 
 app.listen(3000, function() {
     console.log('Servidor ON');

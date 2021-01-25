@@ -4,12 +4,23 @@ function UsuariosDAO(connection) {
     this._docClient = connection;
 }
 
-UsuariosDAO.prototype.listar = function(req, callback) {
+UsuariosDAO.prototype.listar = function(callback) {
     var params = {
         TableName: 'Usuarios',
     };
     
     this._docClient.scan(params, callback);
+}
+
+UsuariosDAO.prototype.buscarPorId = function(id, callback) {
+    var params = {
+        TableName: "Usuarios",
+        Key:{
+            "id": id
+        }        
+    };
+    
+    this._docClient.get(params, callback);
 }
 
 UsuariosDAO.prototype.incluir = function(dados, callback) {
@@ -27,16 +38,7 @@ UsuariosDAO.prototype.incluir = function(dados, callback) {
     this._docClient.put(params, callback);
 }
 
-UsuariosDAO.prototype.buscarPorId = function(id, callback) {
-    var params = {
-        TableName: "Usuarios",
-        Key:{
-            "id": id
-        }        
-    };
-    
-    this._docClient.get(params, callback);
-}
+
 
 UsuariosDAO.prototype.alterar = function(id, dados, callback) {
     
