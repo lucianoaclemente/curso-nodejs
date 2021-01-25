@@ -38,8 +38,6 @@ UsuariosDAO.prototype.incluir = function(dados, callback) {
     this._docClient.put(params, callback);
 }
 
-
-
 UsuariosDAO.prototype.alterar = function(id, dados, callback) {
     
     var params = {
