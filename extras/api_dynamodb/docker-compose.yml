@@ -1,0 +1,29 @@
+version: "3"
+services:
+  app:
+    container_name: api_dynamodb
+    image: lucianoclemente/api_dynamodb
+    restart: always
+    build: .
+    environment:
+      - dynamodbEndpoint=http://192.168.85.136:8000
+    networks:
+      - some-network
+    links:
+      - dynamodb
+    depends_on: 
+      - dynamodb
+    ports:
+      - "3000:3000"
+
+  dynamodb:
+    container_name: dyndbsrv
+    image: amazon/dynamodb-local  
+    networks:
+      - some-network
+    ports:
+       - "8000:8000"
+
+networks:
+  some-network:
+    driver: bridge
